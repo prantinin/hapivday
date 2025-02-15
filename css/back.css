@@ -1,0 +1,22 @@
+.next-button, .back-button {
+    border: 1px solid black;
+    border-radius: 30px;
+
+    margin-top: 20px;
+    padding: 15px 40px;
+
+    background-color: #ffe4e9;
+    color: black;
+    font-size: 12px;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.next-button:hover,
+.back-button:hover {
+    border-color: white;
+    background-color: black;
+    color: white;
+}

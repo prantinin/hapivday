@@ -1,0 +1,66 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 15px 40px;
+    
+    color: white;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    color: #ffe4e9;
+}
+
+.heart-frog {
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    margin-top: -70px;
+}
+
+.presents-top .presents-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+
+    margin-top: -100px;
+}
+
+.present {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+
+    background-color: transparent;
+    border: none;
+
+    transition: transform 0.3s ease;
+}
+
+.present img {
+    max-width: 200px;
+    min-width: 80px; 
+}
+
+.present:hover {
+    transform: scale(1.1);
+}

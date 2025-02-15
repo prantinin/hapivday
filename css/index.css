@@ -1,0 +1,38 @@
+.bubbles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 78%;
+    margin: 0 auto;
+    position: fixed;
+    top: 30%;
+    left: 8%
+}
+
+.bubble-button {    
+    width: 12vw;
+    height: auto;
+    object-fit: contain;
+
+    background-color: transparent;
+    border: none;
+
+    transition: transform 0.3s ease;
+}
+
+.bubble-button img {
+    max-width: 200px;
+    min-width: 80px; 
+}
+
+.bubble-button:hover {
+    transform: scale(1.1);
+}
+
+.left-bubble {
+    margin-right: auto;
+}
+
+.right-bubble {
+    margin-left: auto;
+}

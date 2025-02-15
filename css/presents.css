@@ -1,0 +1,105 @@
+.present12 .back-button,
+.present11 .next-button,
+.present10 .back-button,
+.present9 .back-button,
+.present8 .back-button,
+.present4 .back-button,
+.present1 .back-button {
+    position: fixed;
+    padding: 15px 40px;
+
+    bottom: 60px;
+    right: 70px;
+}
+
+.present2 .back-button {
+    position: fixed;
+    padding: 15px 40px;
+
+    top: 50px;
+    left: 100px;
+}
+
+.present3 .back-button {
+    position: fixed;
+    padding: 15px 40px;
+
+    bottom: 70px;
+    right: 500px;
+}
+
+.present7 .back-button,
+.present6 .back-button,
+.present5 .back-button {
+    position: fixed;
+    padding: 15px 40px;
+
+    top: 30px;
+    right: 140px;
+    left: auto;
+}
+
+
+
+
+
+
+.present3 .video {
+    position: fixed;
+    
+    height: 80vh;
+    width: auto;
+
+    top: 70px;
+    left: 300px;
+}
+
+.present4 .video {
+    position: fixed;
+    padding: 15px 40px;
+
+    height: 50vh;
+    width: auto;
+
+    bottom: 0px;
+    right: 400px;
+}
+
+.present7 .video,
+.present5 .video {
+    position: fixed;
+    
+    height: 40vh;
+    width: auto;
+
+    top: 200px;
+    left: 900px;
+}
+
+.surprise .video {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 40px;
+
+    height: 500px;
+    width: auto;
+
+    bottom: 60px;
+    right: 70px;
+}
+
+
+
+
+.surprise .text {
+    font-style: 'Apple Garamond';
+    font-size: 50px;
+    color: white;
+
+    text-shadow:  
+        -1px -1px 0 #4138ac,  
+         1px -1px 0 #4138ac,  
+        -1px  1px 0 #4138ac,  
+         1px  1px 0 #4138ac;
+}
