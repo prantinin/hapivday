@@ -1,14 +1,21 @@
-
 #audioToggle {
     position: fixed; 
     bottom: 5vh;
-    right: 2vw;
     cursor: pointer;
     background: transparent;
     border: none;
     z-index: 100;
 }
 
+body:not([class^="present"]) #audioToggle {
+    right: 2vw !important;
+}
+
+/* Apply special styles to all "present" pages */
+body[class^="present"] #audioToggle {
+    left: 5vw !important;
+}
+ 
 #audioToggle img {
     height: 10vh;
     width: auto;
