@@ -1,0 +1,17 @@
+
+#audioToggle {
+    position: fixed; 
+    bottom: 5vh;
+    right: 2vw;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 100;
+}
+
+#audioToggle img {
+    height: 10vh;
+    width: auto;
+    max-height: 50px;
+    min-height: 30px;
+}
