@@ -39,6 +39,13 @@
     left: auto;
 }
 
+.surprise .back-button {
+    position: fixed;
+    padding: 15px 40px;
+
+    top: 20px;
+    left: 40px;
+}
 
 
 
@@ -50,8 +57,8 @@
     height: 80vh;
     width: auto;
 
-    top: 70px;
-    left: 300px;
+    top: 10vh;
+    left: 20vw;
 }
 
 .present4 .video {
@@ -61,28 +68,34 @@
     height: 50vh;
     width: auto;
 
-    bottom: 0px;
-    right: 400px;
+    bottom: 0vh;
+    right: 30vw;
 }
 
-.present7 .video,
 .present5 .video {
     position: fixed;
     
     height: 40vh;
     width: auto;
 
-    top: 200px;
-    left: 900px;
+    top: 30vh;
+    left: 60vw;
+}
+
+.present7 .video {
+    position: fixed;
+    
+    height: 35vh;
+    width: auto;
+
+    top: 17vh;
+    left: 60vw;
 }
 
 .surprise .video {
-    position: fixed;
-    justify-content: center;
-    align-items: center;
     padding: 15px 40px;
 
-    height: 500px;
+    height: 80vh;
     width: auto;
 
     bottom: 60px;
@@ -92,14 +105,30 @@
 
 
 
+.surprise .contents {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 10vh;
+}
+
 .surprise .text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    
     font-style: 'Apple Garamond';
-    font-size: 50px;
+    font-size: 3vw;
     color: white;
+    text-align: right;
 
     text-shadow:  
-        -1px -1px 0 #4138ac,  
-         1px -1px 0 #4138ac,  
-        -1px  1px 0 #4138ac,  
-         1px  1px 0 #4138ac;
+        -1px -1px 0 #2d2587,  
+         1px -1px 0 #2d2587,  
+        -1px  1px 0 #2d2587,  
+         1px  1px 0 #2d2587;
+
+    z-index: 10;
 }
