@@ -1,38 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const audioFiles = ["../audio/cant-help-falling.mp3", "../audio/love-like-you.mp3", "../audio/tifa-theme.mp3"];
+    const audioToggle = document.getElementById("audioToggle");
+    const audioIcon = document.getElementById("audioIcon");
 
-    function getRandomAudio() {
-        return audioFiles[Math.floor(Math.random() * audioFiles.length)];
+    const songs = [
+        "../audio/love-like-you.mp3",
+        "../audio/song2.mp3",
+        "../audio/song3.mp3",
+        "../audio/song4.mp3"
+    ];
+
+    let audio = new Audio(); // Create an audio element
+    let songQueue = shuffleArray([...songs]); // Initial shuffle
+    let currentIndex = 0;
+    let isPlaying = sessionStorage.getItem("isPlaying") === "true";
+
+    // Function to shuffle songs
+    function shuffleArray(array) {
+        return array.sort(() => Math.random() - 0.5);
     }
 
+    // Function to play next song
+    function playNextSong() {
+        currentIndex++;
+        if (currentIndex >= songQueue.length) {
+            songQueue = shuffleArray([...songs]); // Reshuffle when all songs are played
+            currentIndex = 0;
+        }
+        audio.src = songQueue[currentIndex];
+        audio.play();
+    }
+
+    // Check if the page has a video element
     const hasVideo = document.querySelector("video") !== null;
-    if (hasVideo) return; // Stop audio if there's a video
 
-    let storedAudio = sessionStorage.getItem("currentAudio") || getRandomAudio();
-    let storedTime = sessionStorage.getItem("audioTime") || 0;
-
-    let audioElement = document.createElement("audio");
-    audioElement.id = "backgroundAudio";
-    audioElement.src = storedAudio;
-    audioElement.volume = 0.5;
-    audioElement.loop = true;
-    document.body.appendChild(audioElement);
-
-    function playAudio() {
-        audioElement.currentTime = parseFloat(storedTime);
-        audioElement.play().catch((error) => {
-            console.warn("Autoplay blocked, waiting for user interaction");
-        });
-        sessionStorage.setItem("currentAudio", storedAudio);
+    if (hasVideo) {
+        audio.pause();
+        sessionStorage.setItem("isPlaying", "false");
+        audioIcon.src = "../icons/audio-off.png";
+        return; // Stop audio setup on video pages
     }
 
-    // Play after user interaction
-    document.addEventListener("click", () => {
-        playAudio();
-    }, { once: true });
+    // Toggle music function
+    function toggleMusic() {
+        if (isPlaying) {
+            audio.pause();
+            audioIcon.src = "../icons/audio-off.png";
+            sessionStorage.setItem("isPlaying", "false");
+        } else {
+            audio.src = songQueue[currentIndex];
+            audio.play();
+            audioIcon.src = "../icons/audio-on.png";
+            sessionStorage.setItem("isPlaying", "true");
+        }
+        isPlaying = !isPlaying;
+    }
 
-    // Save progress every second
-    setInterval(() => {
-        sessionStorage.setItem("audioTime", audioElement.currentTime);
-    }, 1000);
+    // Load saved state if music was already playing
+    if (isPlaying) {
+        audio.src = songQueue[currentIndex];
+        audio.play();
+        audioIcon.src = "../icons/audio-on.png";
+    } else {
+        audioIcon.src = "../icons/audio-off.png";
+    }
+
+    // Play next song when current one ends
+    audio.addEventListener("ended", playNextSong);
+
+    // Attach event listener to the button
+    audioToggle.addEventListener("click", toggleMusic);
 });
