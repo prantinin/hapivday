@@ -29,6 +29,12 @@ body {
          1px  1px 0 black;
 }
 
+.letter-div {
+    position: relative; /* Ensures the frog's position is tied to this container */
+    display: flex;
+    align-items: center; /* Aligns the frog and letter */
+}
+
 .letter {
     height: 65vh;
     width: 110vh;
@@ -45,9 +51,13 @@ body {
 .side-frog {
     position: absolute;
     height: 250px;
-    left: 250px;
+    left: -130px;
     top: 50%;
     z-index: 0;
+
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s;
 }
 
 .letter-contents {
